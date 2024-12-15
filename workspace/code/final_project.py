@@ -66,7 +66,6 @@ for i, example in enumerate(tqdm(test_data, total=len(test_data))):
     import re
     gold_numbers = re.findall(r"####\s*([0-9]+)", gold_answer)
     if not gold_numbers:
-        # 정답 파싱 실패 시 스킵
         continue
     gold = gold_numbers[-1]
 
