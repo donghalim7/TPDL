@@ -41,6 +41,8 @@ def solve_problem(question, max_new_tokens=256):
             do_sample=False
         )
     generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    
+    # print("generated: ", generated)
 
     if "FINAL ANSWER:" in generated:
         answer_text = generated.split("FINAL ANSWER:")[-1].strip()
@@ -54,7 +56,7 @@ def solve_problem(question, max_new_tokens=256):
 
 correct = 0
 total = 0
-num_eval = 100  # 일부 문제만 평가
+num_eval = 3
 
 for i, example in enumerate(tqdm(test_data, total=len(test_data))):
     # 주석 처리시 전체에 대해 평가
