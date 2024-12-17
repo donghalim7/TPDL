@@ -116,10 +116,11 @@ if __name__ == "__main__":
     ]
     
     datasets = [
-        # "hendrycks/competition_math",
-        "openai/gsm8k",
+        "hendrycks/competition_math",
+        # "openai/gsm8k",
     ]
     
+    # 모델별로 설정
     prompt_templates = {
         "meta-llama/Llama-3.2-3B-Instruct" : (
             "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n"
@@ -141,6 +142,7 @@ if __name__ == "__main__":
         )
     }
     
+    # 데이터셋별로 설정
     dataset_configs = {
         "openai/gsm8k": {
             "question_key": "question",
